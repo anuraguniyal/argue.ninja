@@ -9,7 +9,7 @@ var child = require('child_process');
 var fs = require('fs');
 
 var path = {
-  HTML: 'src/index.html',
+  COPY: ['src/index.html', 'src/css/style.css'],
   MINIFIED_OUT: 'build.min.js',
   OUT: 'build.js',
   DEST: 'dist',
@@ -19,12 +19,12 @@ var path = {
 };
 
 gulp.task('copy', function(){
-  gulp.src(path.HTML)
+  gulp.src(path.COPY)
     .pipe(gulp.dest(path.DEST));
 });
 
 gulp.task('watch', function() {
-  gulp.watch(path.HTML, ['copy']);
+  gulp.watch(path.COPY, ['copy']);
 
   var watcher  = watchify(browserify({
     entries: [path.ENTRY_POINT],
