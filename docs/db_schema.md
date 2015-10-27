@@ -1,15 +1,18 @@
 - `root`
     - `forum`  Discussion alpha vs beta
+        - `category` For future use. e.g. politics, sports, technology etc
         - `title` title of dicussion e.g. "What is the best mobile OS"
-        - `img_url` any background url for forum header
-        - `alpha_q` question for alpha e.g. "Android"
-        - `beta_q` question for beta e.g. "iOS"
-        - `alpha_url` any url related to alpha info (wikipedia link?)
-        - `beta_url`
-        - `alpha_img_url` any image for alpha
-        - `beta_img_url`
-        - `alpha_votes` up-votes for alpha
-        - `beta_votes` up-votes for beta
+        - `timestamp_start` when it was posted UTC
+        - `timestamp_end` when it ended UTC
+        - `header_img_url` any background url for forum header
+        - `alpha_opt` option alpha e.g. "Android"
+        - `beta_opt` option beta e.g. "iOS"
+        - `alpha_url` any url related to alpha opt (wikipedia link?)
+        - `beta_url`  any url related to beta opt (wikipedia link?)
+        - `alpha_img_url` any image for alpha opt
+        - `beta_img_url`  any image for alpha opt
+        - `alpha_votes` up-votes for alpha opt
+        - `beta_votes` up-votes for beta opt
 
         - `messages` list of messages
             - `message-id`
