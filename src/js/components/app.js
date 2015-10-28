@@ -6,43 +6,11 @@ var ArgueNinjaApp = module.exports = React.createClass({
   render: function() {
     return (
       <div className="main_app">
-        <ForumHeader />
-        <Link to="/try">Try</Link>
-        xxxxy
+        <div className="app_banner">ArgueNinja - keep arguing...</div>
+        {this.props.children}
       </div>
     );
   }
 });
-
-var ForumHeader = React.createClass({
-  render: function() {
-    return (
-      <div className="forum_header">
-      <AlphaHeader />
-      <BetaHeader />
-      </div>
-    )
-  }
-})
-
-var AlphaHeader = React.createClass({
-  render: function() {
-    return (
-      <div className="alpha_header">
-      Alpha1
-      </div>
-    )
-  }
-})
-
-var BetaHeader = React.createClass({
-  render: function() {
-    return (
-      <div className="beta_header">
-      Beta1x
-      </div>
-    )
-  }
-})
 
 

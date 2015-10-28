@@ -1,11 +1,26 @@
+.app_banner {
+    background-color: #CCECCC;
+    border-style: solid;
+    border-color: red;
+    border-width: 1px;
+}
+
 .forum_header {
     padding: 10px;
  }
 
  .alpha_header {
-     color: red;
+    color: red;
+    background-color: #ECCCCC;
+    float: left;
+    width: 50%;
+    overflow: hidden;
  }
 
  .beta_header {
-     color: blue;
+    color: blue;
+    background-color: #CCCCEC;
+    float: left;
+    width: 50%;
+    overflow: hidden;
  }

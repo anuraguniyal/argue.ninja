@@ -7,6 +7,8 @@ var reactify = require('reactify');
 var streamify = require('gulp-streamify');
 var child = require('child_process');
 var fs = require('fs');
+var debug = require('gulp-debug');
+var gutil = require('gulp-util');
 
 var path = {
   COPY: ['src/index.html', 'src/css/style.css'],
@@ -23,25 +25,34 @@ gulp.task('copy', function(){
     .pipe(gulp.dest(path.DEST));
 });
 
-gulp.task('watch', function() {
-  gulp.watch(path.COPY, ['copy']);
-
-  var watcher  = watchify(browserify({
+var watcher = undefined;
+function get_watcher(){
+  if(watcher) return watcher
+  watcher = watchify(browserify({
     entries: [path.ENTRY_POINT],
     transform: [reactify],
     debug: true,
     cache: {}, packageCache: {}, fullPaths: true
   }));
+  watcher.on('log', gutil.log);
+  return watcher;
+}
 
-  return watcher.on('update', function () {
-    watcher.bundle()
+function bundle(){
+  return get_watcher().bundle()
+      .on('error', gutil.log.bind(gutil, 'Browserify Error'))
+      //.pipe(debug({title: 'unicorn:'}))
       .pipe(source(path.OUT))
       .pipe(gulp.dest(path.DEST_SRC))
-      console.log('Updated');
-  })
-    .bundle()
-    .pipe(source(path.OUT))
-    .pipe(gulp.dest(path.DEST_SRC));
+}
+
+gulp.task('bundle', bundle)
+
+gulp.task('watch', function() {
+  gulp.watch(path.COPY, ['copy']);
+
+  return get_watcher().on('update', bundle)
+
 });
 
 gulp.task('server', function() {
@@ -51,4 +62,4 @@ gulp.task('server', function() {
   server.stderr.pipe(log);
 });
 
-gulp.task('default', ['watch', 'copy', 'server']);
+gulp.task('default', ['watch', 'copy', 'bundle', 'server']);
