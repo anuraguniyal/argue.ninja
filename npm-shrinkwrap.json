@@ -423,6 +423,11 @@
       "from": "dateformat@>=1.0.11 <2.0.0",
       "resolved": "https://registry.npmjs.org/dateformat/-/dateformat-1.0.11.tgz"
     },
+    "deep-equal": {
+      "version": "1.0.1",
+      "from": "deep-equal@>=1.0.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/deep-equal/-/deep-equal-1.0.1.tgz"
+    },
     "deep-is": {
       "version": "0.1.3",
       "from": "deep-is@>=0.1.2 <0.2.0",
@@ -1487,6 +1492,11 @@
       "from": "hash.js@>=1.0.0 <2.0.0",
       "resolved": "https://registry.npmjs.org/hash.js/-/hash.js-1.0.3.tgz"
     },
+    "history": {
+      "version": "1.12.6",
+      "from": "history@*",
+      "resolved": "https://registry.npmjs.org/history/-/history-1.12.6.tgz"
+    },
     "hosted-git-info": {
       "version": "2.1.4",
       "from": "hosted-git-info@>=2.0.2 <3.0.0",
@@ -1563,6 +1573,11 @@
       "version": "0.6.6",
       "from": "interpret@>=0.6.2 <0.7.0",
       "resolved": "https://registry.npmjs.org/interpret/-/interpret-0.6.6.tgz"
+    },
+    "invariant": {
+      "version": "2.1.1",
+      "from": "invariant@>=2.0.0 <3.0.0",
+      "resolved": "https://registry.npmjs.org/invariant/-/invariant-2.1.1.tgz"
     },
     "is-array": {
       "version": "1.0.1",
@@ -2095,6 +2110,11 @@
       "from": "q@>=1.1.2 <1.2.0",
       "resolved": "https://registry.npmjs.org/q/-/q-1.1.2.tgz"
     },
+    "qs": {
+      "version": "4.0.0",
+      "from": "qs@>=4.0.0 <5.0.0",
+      "resolved": "https://registry.npmjs.org/qs/-/qs-4.0.0.tgz"
+    },
     "querystring": {
       "version": "0.2.0",
       "from": "querystring@0.2.0",
@@ -2131,6 +2151,18 @@
       "version": "0.14.0",
       "from": "react-dom@>=0.14.0-rc1 <0.15.0",
       "resolved": "https://registry.npmjs.org/react-dom/-/react-dom-0.14.0.tgz"
+    },
+    "react-router": {
+      "version": "1.0.0-rc3",
+      "from": "react-router@latest",
+      "resolved": "https://registry.npmjs.org/react-router/-/react-router-1.0.0-rc3.tgz",
+      "dependencies": {
+        "history": {
+          "version": "1.12.3",
+          "from": "history@1.12.3",
+          "resolved": "https://registry.npmjs.org/history/-/history-1.12.3.tgz"
+        }
+      }
     },
     "react-tap-event-plugin": {
       "version": "0.1.8",
@@ -2545,6 +2577,11 @@
       "version": "0.0.4",
       "from": "vm-browserify@>=0.0.1 <0.1.0",
       "resolved": "https://registry.npmjs.org/vm-browserify/-/vm-browserify-0.0.4.tgz"
+    },
+    "warning": {
+      "version": "2.1.0",
+      "from": "warning@>=2.0.0 <3.0.0",
+      "resolved": "https://registry.npmjs.org/warning/-/warning-2.1.0.tgz"
     },
     "whatwg-fetch": {
       "version": "0.9.0",
