@@ -10,6 +10,7 @@ var fs = require('fs');
 var debug = require('gulp-debug');
 var gutil = require('gulp-util');
 var uglify = require('gulp-uglify');
+var connect = require('gulp-connect');
 
 var path = {
   COPY: ['src/index.html', 'src/css/style.css'],
@@ -96,12 +97,19 @@ gulp.task('watch', function() {
   incremental_bundle()
 });
 
-gulp.task('server', function() {
+gulp.task('python-server', function() {
   var server = child.spawn('python', ['-m', 'SimpleHTTPServer']);
   gutil.log("Starting server @ localhost:8000")
   var log = fs.createWriteStream('/tmp/server.log', {flags: 'a'});
   server.stdout.pipe(log);
   server.stderr.pipe(log);
+});
+
+gulp.task('server', function() {
+  connect.server({
+    root: 'dist',
+    livereload: true //somewhoe not working?
+  });
 });
 
 gulp.task('default', ['watch',  'server']);

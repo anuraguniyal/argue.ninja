@@ -6,7 +6,7 @@ var ArgueNinjaApp = module.exports = React.createClass({
   render: function() {
     return (
       <div className="main_app">
-        <div className="app_banner">ArgueNinja - keep arguing...</div>
+        <div className="app_banner">Argue Ninja - keep arguing...</div>
         {this.props.children}
       </div>
     );
