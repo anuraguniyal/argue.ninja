@@ -1,13 +1,10 @@
-var Router = require('react-router').Router
-var Route = require('react-router').Route
-var IndexRoute = require('react-router').IndexRoute
+import { Router, Route, Link, IndexRoute } from 'react-router'
+import React from 'react';
+import createBrowserHistory from 'history/lib/createBrowserHistory'
 
-var React = require('react');
-var createBrowserHistory = require('history/lib/createBrowserHistory')
-
-var App = require('../components/app')
-var Forum = require('../components/forum')
-var Home = require('../components/home')
+import App from '../components/app'
+import Forum from '../components/forum'
+import Home from '../components/home'
 
 module.exports = (
   <Router>
