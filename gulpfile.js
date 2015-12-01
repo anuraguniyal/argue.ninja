@@ -29,7 +29,7 @@ function copy(){
 }
 gulp.task('copy', copy);
 
-var external_libs = ['react', 'react-dom', 'react-router', 'history', 'history/lib/createBrowserHistory', 'flux'];
+var external_libs = ['react', 'react-dom', 'react-router', 'history', 'history/lib/createBrowserHistory', 'redux', 'react-redux', 'redux-thunk'];
 
 function _bundle(b){
  return b.bundle()
@@ -41,14 +41,14 @@ function _bundle(b){
 
 function bundle_libs(){
   var b = browserify({
-    debug: false//no source maps
+    debug: true//no source maps
   });
   external_libs.forEach(function(lib) {
     b.require(lib);
   });
   _bundle(b)
    .pipe(source(path.LIBS_OUT))
-   .pipe(streamify(uglify()))
+   //.pipe(streamify(uglify()))
    .pipe(gulp.dest(path.DEST_SRC))
 }
 
@@ -76,7 +76,7 @@ function get_watcher(){
 function _bundle_app(b){
   _bundle(b)
    .pipe(source(path.OUT))
-   .pipe(streamify(uglify()))
+   //.pipe(streamify(uglify()))
    .pipe(gulp.dest(path.DEST_SRC))
 }
 

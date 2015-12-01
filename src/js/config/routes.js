@@ -6,7 +6,7 @@ import App from '../components/app'
 import Forum from '../components/forum'
 import Home from '../components/home'
 
-module.exports = (
+export default (
   <Router>
     <Route path="/" component={App}>
       <IndexRoute component={Home}/>

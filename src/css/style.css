@@ -24,3 +24,12 @@
     width: 50%;
     overflow: hidden;
  }
+
+ .alpha_message {
+     background-color: #eeffff;
+ }
+ .beta_message {
+     background-color: #ffffee;
+     padding-left:50%;
+ }
+
